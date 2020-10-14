@@ -11,6 +11,11 @@ public class Queue {
 		linkedList = new LinkedList();
 	}
 
+	/**
+	 * UC1
+	 * 
+	 * @param newNode
+	 */
 	public void enqueue(INode newNode) {
 		linkedList.append(newNode);
 	}
@@ -21,5 +26,14 @@ public class Queue {
 
 	public INode peek() {
 		return linkedList.head;
+	}
+
+	/**
+	 * UC2
+	 * 
+	 * @return
+	 */
+	public INode Dequeue() {
+		return linkedList.pop();
 	}
 }
