@@ -1,11 +1,10 @@
 package com.capgemini.linkedlist;
 
 /**
- * @author LENOVO
- * UC1
+ * @author LENOVO UC1
  * @param <K>
  */
-public class Node<K> implements INode<K> {
+public class Node<K extends Comparable<K>> implements INode<K> {
 
 	private K key;
 	private INode<K> next;
@@ -31,4 +30,5 @@ public class Node<K> implements INode<K> {
 	public void setNext(INode<K> next) {
 		this.next = next;
 	}
+
 }

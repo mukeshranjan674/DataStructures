@@ -1,6 +1,6 @@
 package com.capgemini.linkedlist;
 
-public class LinkedList<K> {
+public class LinkedList<K extends Comparable<K>> {
 
 	public INode<K> head;
 	public INode<K> tail;
@@ -59,7 +59,8 @@ public class LinkedList<K> {
 			}
 			tempNode = tempNode.getNext();
 		}
-		return false;
+		append(newNode);
+		return true;
 	}
 
 	/**
