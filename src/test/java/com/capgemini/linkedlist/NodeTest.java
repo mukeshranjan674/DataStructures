@@ -4,7 +4,7 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-public class TestLinkedList {
+public class NodeTest {
 
 	@Test
 	public void given3NumbersShouldAddToLinkedList() {
