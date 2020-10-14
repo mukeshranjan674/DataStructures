@@ -56,7 +56,7 @@ public class LinkedListTest {
 		linkedList.append(secondNode);
 		System.out.println("Before Inserting");
 		linkedList.printNodes();
-		linkedList.insert(thirdNode);
+		linkedList.insert(firstNode, thirdNode);
 		System.out.println("After Inserting");
 		linkedList.printNodes();
 		boolean result = linkedList.head.equals(firstNode) && linkedList.head.getNext().equals(thirdNode)
@@ -122,6 +122,27 @@ public class LinkedListTest {
 		linkedList.append(thirdNode);
 		linkedList.printNodes();
 		boolean result = linkedList.find(30);
+		assertTrue(result);
+	}
+	
+	/**
+	 * UC8
+	 */
+	@Test
+	public void givenNumberWhenInsertShouldReturnLinkedList() {
+		Node<Integer> firstNode = new Node<Integer>(56);
+		Node<Integer> secondNode = new Node<Integer>(30);
+		Node<Integer> thirdNode = new Node<Integer>(70);
+		LinkedList linkedList = new LinkedList();
+		linkedList.append(firstNode);
+		linkedList.append(secondNode);
+		linkedList.append(thirdNode);
+		System.out.println("Before Inserting");
+		linkedList.printNodes();
+		Node<Integer> newNode = new Node<Integer>(40);
+		boolean result = linkedList.insert(secondNode, newNode);
+		System.out.println("After Inserting");
+		linkedList.printNodes();
 		assertTrue(result);
 	}
 }

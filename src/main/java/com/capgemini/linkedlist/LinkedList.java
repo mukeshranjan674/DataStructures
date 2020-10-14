@@ -44,14 +44,22 @@ public class LinkedList<K> {
 	}
 
 	/**
-	 * UC4
+	 * UC4 UC8
 	 * 
 	 * @param newNode
 	 */
-	public void insert(INode newNode) {
-		INode tempNode = this.head.getNext();
-		this.head.setNext(newNode);
-		newNode.setNext(tempNode);
+	public boolean insert(INode myNode, INode newNode) {
+		INode tempNode = this.head;
+		while (tempNode.getNext() != null) {
+			if (tempNode.getKey().equals(myNode.getKey())) {
+				tempNode = myNode.getNext();
+				myNode.setNext(newNode);
+				newNode.setNext(tempNode);
+				return true;
+			}
+			tempNode = tempNode.getNext();
+		}
+		return false;
 	}
 
 	/**
