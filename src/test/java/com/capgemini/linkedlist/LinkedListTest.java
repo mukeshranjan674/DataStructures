@@ -1,11 +1,15 @@
 package com.capgemini.linkedlist;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
 public class LinkedListTest {
 
+	/**
+	 * UC2
+	 */
 	@Test
 	public void given3NumbersWhenAddedShouldAddToTheTop() {
 		Node<Integer> firstNode = new Node<Integer>(70);
@@ -21,6 +25,9 @@ public class LinkedListTest {
 		assertTrue(result);
 	}
 
+	/**
+	 * UC3
+	 */
 	@Test
 	public void given3NumbersWhenAppendedShouldReturnLinkedList() {
 		Node<Integer> firstNode = new Node<Integer>(56);
@@ -36,6 +43,9 @@ public class LinkedListTest {
 		assertTrue(result);
 	}
 
+	/**
+	 * UC4
+	 */
 	@Test
 	public void givenNumberWhenInsertedShouldReturnLinkedList() {
 		Node<Integer> firstNode = new Node<Integer>(56);
@@ -54,6 +64,9 @@ public class LinkedListTest {
 		assertTrue(result);
 	}
 
+	/**
+	 * UC5
+	 */
 	@Test
 	public void givenFirstNumberWhenDeletedShouldReturnLinkedList() {
 		Node<Integer> firstNode = new Node<Integer>(56);
@@ -72,7 +85,10 @@ public class LinkedListTest {
 				&& linkedList.tail.equals(thirdNode);
 		assertTrue(result);
 	}
-	
+
+	/**
+	 * UC6
+	 */
 	@Test
 	public void givenLastNumberWhenDeletedShouldReturnLinkedList() {
 		Node<Integer> firstNode = new Node<Integer>(56);
@@ -92,4 +108,20 @@ public class LinkedListTest {
 		assertTrue(result);
 	}
 
+	/**
+	 * UC7
+	 */
+	@Test
+	public void givenLastNumberWhenSearchedShouldGetReturned() {
+		Node<Integer> firstNode = new Node<Integer>(56);
+		Node<Integer> secondNode = new Node<Integer>(30);
+		Node<Integer> thirdNode = new Node<Integer>(70);
+		LinkedList<Integer> linkedList = new LinkedList<Integer>();
+		linkedList.append(firstNode);
+		linkedList.append(secondNode);
+		linkedList.append(thirdNode);
+		linkedList.printNodes();
+		boolean result = linkedList.find(30);
+		assertTrue(result);
+	}
 }

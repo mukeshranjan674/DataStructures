@@ -73,6 +73,22 @@ public class LinkedList<K> {
 		this.tail = tempNode;
 	}
 
+	/**
+	 * UC7
+	 * 
+	 * @param node
+	 * @return
+	 */
+	public boolean find(K node) {
+		INode tempNode = this.head;
+		while (tempNode.getNext() != null) {
+			if (tempNode.getKey().equals(node))
+				return true;
+			tempNode = tempNode.getNext();
+		}
+		return false;
+	}
+
 	public void printNodes() {
 		StringBuffer nodes = new StringBuffer();
 		INode tempNode = head;
