@@ -10,6 +10,11 @@ public class LinkedList<K> {
 		this.tail = null;
 	}
 
+	/**
+	 * UC2
+	 * 
+	 * @param newNode
+	 */
 	public void add(INode newNode) {
 		if (tail == null)
 			this.tail = newNode;
@@ -21,7 +26,12 @@ public class LinkedList<K> {
 			this.head.setNext(tempNode);
 		}
 	}
-	
+
+	/**
+	 * UC3
+	 * 
+	 * @param newNode
+	 */
 	public void append(INode newNode) {
 		if (head == null)
 			this.head = newNode;
@@ -32,11 +42,22 @@ public class LinkedList<K> {
 			this.tail = newNode;
 		}
 	}
-	
+
+	/**
+	 * UC4
+	 * 
+	 * @param newNode
+	 */
 	public void insert(INode newNode) {
-		INode tempNode = head.getNext();
-		head.setNext(newNode);
+		INode tempNode = this.head.getNext();
+		this.head.setNext(newNode);
 		newNode.setNext(tempNode);
+	}
+
+	public void pop() {
+		// INode tempNode = this.head.getNext();
+		// this.head.setNext(tempNode);
+		this.head = this.head.getNext();
 	}
 
 	public void printNodes() {

@@ -1,5 +1,10 @@
 package com.capgemini.linkedlist;
 
+/**
+ * @author LENOVO
+ * UC1
+ * @param <K>
+ */
 public class Node<K> implements INode<K> {
 
 	private K key;

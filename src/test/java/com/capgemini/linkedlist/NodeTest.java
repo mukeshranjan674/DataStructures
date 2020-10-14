@@ -4,6 +4,11 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
+/**
+ * UC1
+ * @author LENOVO
+ *
+ */
 public class NodeTest {
 
 	@Test
