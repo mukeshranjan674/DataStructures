@@ -22,4 +22,21 @@ public class StackTest {
 		stack.printStack();
 		assertEquals(thirdNode, result);
 	}
+	
+	@Test
+	public void whenPerfornedPopShouldReturnTopmostElement() {
+		INode<Integer> firstNode = new Node<Integer>(70);
+		INode<Integer> secondNode = new Node<Integer>(30);
+		INode<Integer> thirdNode = new Node<Integer>(56);
+		Stack stack = new Stack();
+		stack.push(firstNode);
+		stack.push(secondNode);
+		stack.push(thirdNode);
+		INode result = stack.pop();
+		stack.printStack();
+		assertEquals(thirdNode, result);
+		INode result1 = stack.pop();
+		stack.printStack();
+		assertEquals(secondNode, result1);
+	}
 }

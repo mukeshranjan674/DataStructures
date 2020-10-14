@@ -66,8 +66,10 @@ public class LinkedList<K extends Comparable<K>> {
 	/**
 	 * UC5
 	 */
-	public void pop() {
+	public INode pop() {
+		INode tempNode = this.head;
 		this.head = this.head.getNext();
+		return tempNode;
 	}
 
 	/**
