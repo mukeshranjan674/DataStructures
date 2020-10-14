@@ -32,6 +32,12 @@ public class LinkedList<K> {
 			this.tail = newNode;
 		}
 	}
+	
+	public void insert(INode newNode) {
+		INode tempNode = head.getNext();
+		head.setNext(newNode);
+		newNode.setNext(tempNode);
+	}
 
 	public void printNodes() {
 		StringBuffer nodes = new StringBuffer();
