@@ -124,7 +124,7 @@ public class LinkedListTest {
 		boolean result = linkedList.find(30);
 		assertTrue(result);
 	}
-	
+
 	/**
 	 * UC8
 	 */
@@ -144,5 +144,29 @@ public class LinkedListTest {
 		System.out.println("After Inserting");
 		linkedList.printNodes();
 		assertTrue(result);
+	}
+
+	/**
+	 * UC9
+	 */
+	@Test
+	public void givenNumberWhenDeletedShouldReturnLinkedList() {
+		Node<Integer> firstNode = new Node<Integer>(56);
+		Node<Integer> secondNode = new Node<Integer>(30);
+		Node<Integer> thirdNode = new Node<Integer>(40);
+		Node<Integer> fourthNode = new Node<Integer>(70);
+		LinkedList linkedList = new LinkedList();
+		linkedList.append(firstNode);
+		linkedList.append(secondNode);
+		linkedList.append(thirdNode);
+		linkedList.append(fourthNode);
+		System.out.println("Before Deleting the Element");
+		linkedList.printNodes();
+		boolean result = linkedList.delete(thirdNode);
+		System.out.println("After Deleting the Element");
+		linkedList.printNodes();
+		System.out.println("Size of the Linked list : " + linkedList.size());
+		boolean results = secondNode.getNext().equals(fourthNode);
+		assertEquals(results, result);
 	}
 }

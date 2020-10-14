@@ -97,6 +97,38 @@ public class LinkedList<K> {
 		return false;
 	}
 
+	/**
+	 * UC9
+	 * 
+	 * @param node
+	 * @return
+	 */
+	public boolean delete(INode node) {
+		INode tempNode1 = this.head;
+		INode tempNode2 = this.head.getNext();
+		while (tempNode2.getNext() != null) {
+			if (tempNode2.getKey().equals(node.getKey())) {
+				tempNode1.setNext(tempNode2.getNext());
+				return true;
+			}
+			tempNode2 = tempNode2.getNext();
+			tempNode1 = tempNode1.getNext();
+		}
+		return false;
+	}
+
+	public int size() {
+		INode tempNode = this.head;
+		int count = 0;
+		while (tempNode.getKey() != null) {
+			count++;
+			if (tempNode.getNext() == null)
+				break;
+			tempNode = tempNode.getNext();
+		}
+		return count;
+	}
+
 	public void printNodes() {
 		StringBuffer nodes = new StringBuffer();
 		INode tempNode = head;
