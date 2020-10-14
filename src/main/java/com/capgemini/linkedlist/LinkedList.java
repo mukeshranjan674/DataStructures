@@ -54,10 +54,23 @@ public class LinkedList<K> {
 		newNode.setNext(tempNode);
 	}
 
+	/**
+	 * UC5
+	 */
 	public void pop() {
-		// INode tempNode = this.head.getNext();
-		// this.head.setNext(tempNode);
 		this.head = this.head.getNext();
+	}
+
+	/**
+	 * UC6
+	 */
+	public void popLast() {
+		INode tempNode = this.head;
+		while (tempNode.getNext().getNext() != null) {
+			tempNode = tempNode.getNext();
+		}
+		tempNode.setNext(null);
+		this.tail = tempNode;
 	}
 
 	public void printNodes() {

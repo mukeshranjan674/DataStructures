@@ -72,5 +72,24 @@ public class LinkedListTest {
 				&& linkedList.tail.equals(thirdNode);
 		assertTrue(result);
 	}
+	
+	@Test
+	public void givenLastNumberWhenDeletedShouldReturnLinkedList() {
+		Node<Integer> firstNode = new Node<Integer>(56);
+		Node<Integer> secondNode = new Node<Integer>(30);
+		Node<Integer> thirdNode = new Node<Integer>(70);
+		LinkedList linkedList = new LinkedList();
+		linkedList.append(firstNode);
+		linkedList.append(secondNode);
+		linkedList.append(thirdNode);
+		System.out.println("Before Deleting Last Element");
+		linkedList.printNodes();
+		linkedList.popLast();
+		System.out.println("After Deleting Last Element");
+		linkedList.printNodes();
+		boolean result = linkedList.head.equals(firstNode) && linkedList.head.getNext().equals(secondNode)
+				&& linkedList.tail.equals(secondNode);
+		assertTrue(result);
+	}
 
 }
