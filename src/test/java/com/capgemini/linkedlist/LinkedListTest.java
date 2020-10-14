@@ -20,5 +20,20 @@ public class LinkedListTest {
 		linkedList.printNodes();
 		assertTrue(result);
 	}
+	
+	@Test
+	public void given3NumbersWhenAppendedShouldReturnLinkedList() {
+		Node<Integer> firstNode = new Node<Integer>(56);
+		Node<Integer> secondNode = new Node<Integer>(30);
+		Node<Integer> thirdNode = new Node<Integer>(70);
+		LinkedList linkedList = new LinkedList();
+		linkedList.append(firstNode);
+		linkedList.append(secondNode);
+		linkedList.append(thirdNode);
+		boolean result = linkedList.head.equals(firstNode) && linkedList.head.getNext().equals(secondNode)
+				&& linkedList.tail.equals(thirdNode);
+		linkedList.printNodes();
+		assertTrue(result);
+	}
 
 }
