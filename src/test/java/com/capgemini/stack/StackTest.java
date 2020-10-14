@@ -9,6 +9,9 @@ import com.capgemini.linkedlist.Node;
 
 public class StackTest {
 
+	/**
+	 * UC1
+	 */
 	@Test
 	public void whenGiven3NumbersShouldReturnAStack() {
 		Node<Integer> firstNode = new Node<Integer>(70);
@@ -22,7 +25,10 @@ public class StackTest {
 		stack.printStack();
 		assertEquals(thirdNode, result);
 	}
-	
+
+	/**
+	 * UC2
+	 */
 	@Test
 	public void whenPerfornedPopShouldReturnTopmostElement() {
 		INode<Integer> firstNode = new Node<Integer>(70);

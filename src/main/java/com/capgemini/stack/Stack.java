@@ -11,10 +11,20 @@ public class Stack {
 		linkedList = new LinkedList();
 	}
 
+	/**
+	 * UC1
+	 * 
+	 * @param firstNode
+	 */
 	public void push(INode firstNode) {
 		linkedList.add(firstNode);
 	}
 
+	/**
+	 * UC2
+	 * 
+	 * @return
+	 */
 	public INode pop() {
 		return linkedList.pop();
 	}
