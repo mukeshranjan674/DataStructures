@@ -1,6 +1,6 @@
 package com.capgemini.linkedlist;
 
-public class SortedLinkedList<K extends Comparable<K>> extends LinkedList<K> {
+public class SortedLinkedList<K> extends LinkedList<K> {
 
 	public SortedLinkedList() {
 		super();
@@ -13,10 +13,10 @@ public class SortedLinkedList<K extends Comparable<K>> extends LinkedList<K> {
 			super.head = newNode;
 		else {
 			INode tempNode = super.head;
-			if (tempNode.getKey().compareTo(newNode.getKey()) >= 0)
+			if (((Comparable<K>) tempNode.getKey()).compareTo((K) newNode.getKey()) >= 0)
 				super.add(newNode);
 			else {
-				while (tempNode.getNext() != null && tempNode.getNext().getKey().compareTo(newNode.getKey()) < 0) {
+				while (tempNode.getNext() != null && ((Comparable<K>) tempNode.getNext().getKey()).compareTo((K) newNode.getKey()) < 0) {
 					tempNode = tempNode.getNext();
 				}
 				super.insert(tempNode, newNode);

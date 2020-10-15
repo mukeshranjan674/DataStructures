@@ -30,5 +30,10 @@ public class Node<K extends Comparable<K>> implements INode<K> {
 	public void setNext(INode<K> next) {
 		this.next = next;
 	}
+	
+	@Override
+	public String toString() {
+		return "Node [key=" + key + ", next=" + next + "]";
+	}
 
 }

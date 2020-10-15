@@ -1,6 +1,6 @@
 package com.capgemini.linkedlist;
 
-public class LinkedList<K extends Comparable<K>> {
+public class LinkedList<K> {
 
 	public INode<K> head;
 	public INode<K> tail;
@@ -90,14 +90,16 @@ public class LinkedList<K extends Comparable<K>> {
 	 * @param node
 	 * @return
 	 */
-	public boolean find(K node) {
+	public INode find(K key) {
 		INode tempNode = this.head;
+		if (tempNode == null)
+			return null;
 		while (tempNode.getNext() != null) {
-			if (tempNode.getKey().equals(node))
-				return true;
+			if (tempNode.getKey().equals(key))
+				return tempNode;
 			tempNode = tempNode.getNext();
 		}
-		return false;
+		return null;
 	}
 
 	/**
@@ -143,5 +145,10 @@ public class LinkedList<K extends Comparable<K>> {
 		}
 		nodes.append(tempNode.getKey());
 		System.out.println(nodes);
+	}
+	
+	@Override
+	public String toString() {
+		return "LinkedList [head=" + head + "]";
 	}
 }

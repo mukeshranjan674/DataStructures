@@ -1,6 +1,8 @@
 package com.capgemini.linkedlist;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
@@ -121,8 +123,8 @@ public class LinkedListTest {
 		linkedList.append(secondNode);
 		linkedList.append(thirdNode);
 		linkedList.printNodes();
-		boolean result = linkedList.find(30);
-		assertTrue(result);
+		INode result = linkedList.find(30);
+		assertNotNull(result);
 	}
 
 	/**

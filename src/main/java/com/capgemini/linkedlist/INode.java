@@ -1,6 +1,6 @@
 package com.capgemini.linkedlist;
 
-public interface INode<K extends Comparable<K>> {
+public interface INode<K> {
 
 	K getKey();
 
