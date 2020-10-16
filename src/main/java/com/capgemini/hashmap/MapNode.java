@@ -2,6 +2,12 @@ package com.capgemini.hashmap;
 
 import com.capgemini.linkedlist.INode;
 
+/**UC1
+ * @author LENOVO
+ *
+ * @param <K>
+ * @param <V>
+ */
 public class MapNode<K, V> implements INode<K> {
 
 	private K key;
