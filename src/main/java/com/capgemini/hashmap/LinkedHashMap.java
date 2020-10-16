@@ -22,6 +22,10 @@ public class LinkedHashMap<K, V> {
 		return index;
 	}
 
+	/**UC2
+	 * @param key
+	 * @return
+	 */
 	public V get(K key) {
 		int index = this.getBucketIndex(key);
 		LinkedList<K> linkedList = (LinkedList<K>) this.myBucketArray.get(index);
@@ -45,6 +49,21 @@ public class LinkedHashMap<K, V> {
 		} else {
 			mapNode.setValue(value);
 		}
+	}
+
+	/**UC3
+	 * @param key
+	 * @return
+	 */
+	public boolean remove(K key) {
+		int index = this.getBucketIndex(key);
+		LinkedList<K> linkedList = (LinkedList<K>) this.myBucketArray.get(index);
+		if (linkedList == null)
+			return false;
+		MapNode<K, V> mapNode = (MapNode<K, V>) linkedList.find(key);
+		System.out.println(mapNode);
+		boolean result = linkedList.delete(mapNode, linkedList);
+		return result;
 	}
 
 	@Override

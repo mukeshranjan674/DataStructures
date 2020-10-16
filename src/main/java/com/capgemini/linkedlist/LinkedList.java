@@ -94,9 +94,11 @@ public class LinkedList<K> {
 		INode tempNode = this.head;
 		if (tempNode == null)
 			return null;
-		while (tempNode.getNext() != null) {
+		while (tempNode.getKey() != null) {
 			if (tempNode.getKey().equals(key))
 				return tempNode;
+			if (tempNode.getNext() == null)
+				break;
 			tempNode = tempNode.getNext();
 		}
 		return null;
@@ -112,6 +114,33 @@ public class LinkedList<K> {
 		INode tempNode1 = this.head;
 		INode tempNode2 = this.head.getNext();
 		while (tempNode2.getNext() != null) {
+			if (tempNode2.getKey().equals(node.getKey())) {
+				tempNode1.setNext(tempNode2.getNext());
+				return true;
+			}
+			tempNode2 = tempNode2.getNext();
+			tempNode1 = tempNode1.getNext();
+		}
+		return false;
+	}
+
+	public boolean delete(INode node, LinkedList<K> linkedList) {
+		INode tempNode1 = linkedList.head;
+		if (tempNode1 == null)
+			return false;
+		if (tempNode1.getKey().equals(node.getKey())) {
+			if (tempNode1.getNext() == null) {
+				tempNode1 = null;
+			}
+
+			else {
+				tempNode1 = tempNode1.getNext();
+				head = tempNode1;
+			}
+			return true;
+		}
+		INode tempNode2 = linkedList.head.getNext();
+		while (tempNode2.getKey() != null) {
 			if (tempNode2.getKey().equals(node.getKey())) {
 				tempNode1.setNext(tempNode2.getNext());
 				return true;
@@ -146,7 +175,7 @@ public class LinkedList<K> {
 		nodes.append(tempNode.getKey());
 		System.out.println(nodes);
 	}
-	
+
 	@Override
 	public String toString() {
 		return "LinkedList [head=" + head + "]";

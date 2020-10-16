@@ -6,6 +6,9 @@ import org.junit.Test;
 
 public class HashMapTest {
 
+	/**
+	 * UC1
+	 */
 	@Test
 	public void whenGivenASentenceShouldReturnFrequencyOfANumber() {
 		String sentence = "To be or not to be";
